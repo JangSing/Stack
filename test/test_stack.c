@@ -232,6 +232,8 @@ void test_stackRemove_given_one_element_in_Stack_should_remove_head_Element()
   RemovedEle=stackRemove(ptr);
 
   TEST_ASSERT_EQUAL(1,RemovedEle->data);
+  TEST_ASSERT_NULL(RemovedEle->next);
+  
   TEST_ASSERT_NULL(ptr->head);
   TEST_ASSERT_NULL(ptr->tail);
   TEST_ASSERT_EQUAL(0,ptr->length);
@@ -277,6 +279,8 @@ void test_stackRemove_given_three_element_in_Stack_should_remove_head_Element()
   RemovedEle=stackRemove(ptr);
 
   TEST_ASSERT_EQUAL(3,RemovedEle->data);
+  TEST_ASSERT_NULL(RemovedEle->next);
+  
   TEST_ASSERT_EQUAL(2,ptr->head->data);
   TEST_ASSERT_EQUAL(1,ptr->head->next->data);
   TEST_ASSERT_EQUAL(2,ptr->length);
@@ -301,6 +305,8 @@ void test_Add_and_Remove_Element_to_stack()
   stackAdd(ptr,stackElementCreate(5));
 
   TEST_ASSERT_EQUAL(3,RemovedEle->data);
+  TEST_ASSERT_NULL(RemovedEle->next);
+  
   TEST_ASSERT_EQUAL(5,ptr->head->data);
   TEST_ASSERT_EQUAL(2,ptr->head->next->data);
   TEST_ASSERT_EQUAL(1,ptr->head->next->next->data);

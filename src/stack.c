@@ -62,6 +62,7 @@ StackElement *stackRemove(Stack *stack){
     (stack->length)--;
   }
   
+  ptr->next=NULL;
   return ptr;
     
    
