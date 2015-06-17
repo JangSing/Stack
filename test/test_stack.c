@@ -283,7 +283,7 @@ void test_stackRemove_given_three_element_in_Stack_should_remove_head_Element()
 }
 
 
-//test after removing are able to add again
+//test whether after removing are able to add again
 void test_Add_and_Remove_Element_to_stack()
 {
   int i;
