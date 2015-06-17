@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <assert.h>
 
+
 Stack *stackCreate(){
   Stack *ptr=malloc(sizeof(Stack));
   assert(ptr != NULL);
@@ -49,7 +50,12 @@ StackElement *stackRemove(Stack *stack){
   if(stack->head==NULL && stack->tail==NULL){
     return NULL;
   }
-  
+  else if(stack->head->next==NULL){
+    ptr=stack->head;
+    stack->head=NULL;
+    stack->tail=NULL;
+    (stack->length)--;
+  }
   else{
     ptr=stack->head;
     stack->head=stack->head->next;
