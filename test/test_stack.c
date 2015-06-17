@@ -200,6 +200,19 @@ void test_stackAdd_adding_five_element_into_Stack()
   TEST_ASSERT_EQUAL(5,ptr->length);
 }
 
+// Testing function stackRemove when there are no element in stack.
+void test_stackRemove_given_no_element_in_Stack_should_remove_nothing()
+{
+  Stack *ptr;
+  StackElement *RemovedEle;
+
+  ptr=stackCreate();
+  RemovedEle=stackRemove(ptr);
+  
+  TEST_ASSERT_NULL(RemovedEle);
+  TEST_ASSERT_NULL(ptr->head);
+  TEST_ASSERT_NULL(ptr->tail);
+}
 
 /**
  * Testing function stackRemove when there are only one element in stack.
